@@ -4,15 +4,17 @@ import { useDrag } from 'react-use-gesture';
 import SearchBar from "./SearchBar"
 import {menu, bgImages, allMenuCategories} from "../config/source"
 import CategoryMenu from "./CategoryMenu"
+import {color} from "../config/constants"
 // import { motion } from 'framer-motion';
 import styled from '@emotion/styled'
 
 const Menu = ({ menuPages }) => {
     const [pageIndex, setPageIndex] = useState(0);
     const [currentCategory, setCurrentCategory]=useState("all")
-    const [menuItems, setMenuItems]=useState([])
-    
+    const [contents, setContents]=useState(Object.values(menu).reduce((a,b)=>[...a, ...b],[]))
+    const [localContents, setLocalContents]=useState(Object.values(menu).reduce((a,b)=>[...a, ...b],[]))
 
+    console.log(bgImages)
     const bind = useDrag(({ down, movement: [mx], direction: [xDir], velocity }) => {
         if (down && velocity > 0.2) {
             if (xDir < 0 && pageIndex < menuPages.length - 1) {
@@ -27,30 +29,41 @@ const Menu = ({ menuPages }) => {
     const handleCategoryClick=(e)=>{
         console.log("clicked")
         const id=e.target.dataset.id
-        setCurrentCategory(id)
+        console.log("clicked", id)
+        if(id){
+            setCurrentCategory(id)
+            if(id==="all"){
+                setContents(Object.values(menu).reduce((a,b)=>[...a, ...b],[]))
+                setLocalContents(Object.values(menu).reduce((a,b)=>[...a, ...b],[]))
+            }else{
+                setContents(menu[id])
+                setLocalContents(menu[id])
+            }
+            
+        }
 }
 
     return (
-        <Container >
+        <Container color={color.primary}>
           <div className="leftDiv">
             <section>
                 <h3>MENU</h3>
             </section>
             <section className='menuCategories' onClick={handleCategoryClick}>
                 {
-                    allMenuCategories.map(item=><p key={item.id} data-id={item.id}>{item.label}</p>)
+                    allMenuCategories.map(item=><p key={item.id} data-id={item.id} className={item.id===currentCategory?"borderOrange":""}>{item.label}</p>)
                 }
             </section>    
           </div>
           <div className="rightDiv">
           <section>
-            <SearchBar/>
+            <SearchBar placeholder='Enter food item' setLocalContents={setLocalContents} contents={contents} />
             </section>
             
             <section>
                 <CategoryMenu
-                contents={currentCategory==="all"?
-                Object.values(menu).reduce((a,b)=>[...a, ...b],[]):menu[currentCategory]}
+                contents={localContents}
+                backgroundImage={bgImages[currentCategory]}
                 />
             </section> 
           </div>
@@ -68,7 +81,55 @@ const Container=styled.div`
 
 
     .menuCategories {
-        cursor:pointer;
-        text-align:left;
+        height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: space-around;
+    cursor:pointer;
+    font-size:1.5rem;
+
+    .borderOrange {
+        border-bottom:2px solid orange !important;
+    }
+
+        p{
+            width: 100%;
+    border-bottom: 1px solid black;
+
+            &:hover {
+                color:${props=>props.color};
+            }
+
+            
+        }
+    }
+
+    .leftDiv {
+        width:30%;
+
+
+    }
+
+    .rightDiv {
+        width:70%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+
+    
+
+        & section:first-child {
+            min-width:200px;
+            max-width:300px;
+        }
+
+        & section:last-child {
+            width:100%;
+            padding:0 20px;
+        }
+
+
     }
 `

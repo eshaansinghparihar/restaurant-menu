@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled"
 
 
-const CategoryMenu=({contents=[]})=>{
-    return <Container>
+const CategoryMenu=({contents=[], backgroundImage=""})=>{
+    return <Container backgroundImage={backgroundImage}>
         {/* <div className="headers">
             <span>Item</span>
             <span>Price</span>
@@ -18,11 +18,11 @@ const CategoryMenu=({contents=[]})=>{
             </thead>
             <tbody>
                 {contents.map(item=>(<tr key={item.id} >
-                    <td className="alignLeft">
-                        <span>{item.itemName}</span><br/>
-                        <span>({item.itemDes})</span>
+                    <td>
+                        <span className="text-lg font-semibold tracking-wide">{item.itemName}</span><br/>
+                        <span className="alignLeft text-sm font-light">({item.itemDes})</span>
                         </td>
-                    <td className="alignRight">&#8377; {item.price}</td>
+                    <td className="alignRight text-sm font-light">&#8377; {item.price}</td>
                 </tr>))}
             </tbody>
         </table>
@@ -32,6 +32,10 @@ const CategoryMenu=({contents=[]})=>{
 export default CategoryMenu
 const Container=styled.div`
 
+background-size:cover;
+//background:url('https://static.wixstatic.com/media/11062b_6ffa784444774a4997c879c0bd717418~mv2.jpeg/v1/fill/w_803,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Indian%20Food.jpeg'), rgba(0, 0, 0, 0.1);
+background-repeat:no-repeat;  
+width:100%;
 .alignLeft {
     text-align:left;
     width:80%;

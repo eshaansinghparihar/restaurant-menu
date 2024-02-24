@@ -417,7 +417,7 @@ const menu={
 }
 
 const bgImages={
-    appetizers:apetizerBgImage,
+    appetizers:"https://static.wixstatic.com/media/11062b_6ffa784444774a4997c879c0bd717418~mv2.jpeg/v1/fill/w_803,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Indian%20Food.jpeg",
     soups: soupBgImage,
     breakfast: breakfastBgImage,
     sandwiches: sandwichBgImage,
