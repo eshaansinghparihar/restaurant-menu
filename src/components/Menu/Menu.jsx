@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { useDrag } from 'react-use-gesture';
+import { useState } from 'react';
 import SearchBar from "./SearchBar"
 import {menu, bgImages, allMenuCategories} from "../config/source"
 import CategoryMenu from "./CategoryMenu"
@@ -40,7 +40,13 @@ const Menu = () => {
             </section>
             <section className='menuCategories' onClick={handleCategoryClick}>
                 {
-                    allMenuCategories.map(item=><p key={item.id} data-id={item.id} className={item.id===currentCategory?"borderOrange":""}>{item.label}</p>)
+                    allMenuCategories.map(item=>
+                    <p key={item.id} data-id={item.id} className={item.id===currentCategory?"borderOrange flex flex-row gap-2":"flex flex-row gap-2"}>
+                        <span>
+                        <img className={'hidden md:block lg:block xl:block 2xl:block sm:hidden image items-end'} srcSet={bgImages[item.id]} type="image/webp"/>
+                        </span>
+                        {item.label}
+                    </p>)
                 }
             </section>    
           </div>
@@ -68,6 +74,11 @@ const Container=styled.div`
     justify-content: space-between;
     padding:20px;
 
+    .image{
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+    }
 
     .menuCategories {
         height: 100%;

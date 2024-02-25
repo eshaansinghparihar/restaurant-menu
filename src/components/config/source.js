@@ -417,12 +417,13 @@ const menu={
 }
 
 const bgImages={
-    appetizers:"https://static.wixstatic.com/media/11062b_6ffa784444774a4997c879c0bd717418~mv2.jpeg/v1/fill/w_803,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Indian%20Food.jpeg",
-    soups: soupBgImage,
-    breakfast: breakfastBgImage,
-    sandwiches: sandwichBgImage,
-    salads: saladBgImage,
-    vegetarian: vegetarianBgImage
+    all: "https://static.wixstatic.com/media/11062b_3964d09949254a06808955c6adf2a8ff~mv2.jpg/v1/crop/x_47,y_230,w_2556,h_5090/fill/w_489,h_974,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Salmon%20in%20Sauce.jpg",
+    apetizers: "https://static.wixstatic.com/media/11062b_c4a403607c1340d9b6ad9c2deb880020~mv2.jpg/v1/crop/x_553,y_0,w_3195,h_3333/fill/w_485,h_506,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Potato%20Pancakes%20Deruny.jpg",
+    soups: "https://static.wixstatic.com/media/11062b_6a2305b6b1ac4a1e9a8219a0a84a13d5~mv2.jpg/v1/crop/x_841,y_0,w_5175,h_4016/fill/w_492,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Tomato%20Soup.jpg",
+    breakfast: "https://static.wixstatic.com/media/11062b_d35e5f03e00245cd894c7b4c2780e943~mv2.jpg/v1/crop/x_848,y_7,w_2122,h_3325/fill/w_628,h_984,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Eating%20Time.jpg",
+    sandwiches: "https://static.wixstatic.com/media/d09a8429a4594780aa9f7b53a3875b51.jpg/v1/fill/w_241,h_161,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Chicken%20Sandwich.jpg",
+    salads: "https://static.wixstatic.com/media/11062b_58e7427cc29742ecbf64e05f30c30d29~mv2_d_4800_3122_s_4_2.jpg/v1/crop/x_0,y_628,w_4800,h_2494/fill/w_490,h_261,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Simple%20Green%20Salad.jpg",
+    vegetarian: "https://static.wixstatic.com/media/11062b_6ffa784444774a4997c879c0bd717418~mv2.jpeg/v1/fill/w_803,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Indian%20Food.jpeg"
 }
 
 const allMenuCategories=[
