@@ -22,7 +22,7 @@ const [isOpen, setIsOpen] = useState(false);
         </div>
         <div>
         <nav className="container mx-auto flex items-center justify-between">
-        <div className="max-md:hidden flex items-center">
+        <div className="max-lg:hidden flex items-center">
         <a href="#" 
         className="uppercase font-light text-xs hover:text-white text-black text-lg font-bold mr-4 hover:bg-gray-700 py-2 px-4 rounded">Home</a>
         <div class="relative group">
