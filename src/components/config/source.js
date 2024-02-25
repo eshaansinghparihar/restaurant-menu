@@ -1,11 +1,3 @@
-import apetizerBgImage from "../assets/appetizers.webp"
-import breakfastBgImage from "../assets/breakfast.webp"
-import saladBgImage from "../assets/salads.webp"
-import sandwichBgImage from "../assets/sandwich.webp"
-import soupBgImage from "../assets/soup.webp"
-import vegetarianBgImage from "../assets/vegetarian.webp"
-
-
 const menu={
     apetizers:[
         {
