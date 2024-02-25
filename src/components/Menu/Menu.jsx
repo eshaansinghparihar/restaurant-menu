@@ -8,23 +8,12 @@ import {color} from "../config/constants"
 // import { motion } from 'framer-motion';
 import styled from '@emotion/styled'
 
-const Menu = ({ menuPages }) => {
-    const [pageIndex, setPageIndex] = useState(0);
+const Menu = () => {
     const [currentCategory, setCurrentCategory]=useState("all")
     const [contents, setContents]=useState(Object.values(menu).reduce((a,b)=>[...a, ...b],[]))
     const [localContents, setLocalContents]=useState(Object.values(menu).reduce((a,b)=>[...a, ...b],[]))
 
     console.log(bgImages)
-    const bind = useDrag(({ down, movement: [mx], direction: [xDir], velocity }) => {
-        if (down && velocity > 0.2) {
-            if (xDir < 0 && pageIndex < menuPages.length - 1) {
-                setPageIndex((prev) => prev + 1);
-            }
-            if (xDir > 0 && pageIndex > 0) {
-                setPageIndex((prev) => prev - 1);
-            }
-        }
-    });
 
     const handleCategoryClick=(e)=>{
         console.log("clicked")
